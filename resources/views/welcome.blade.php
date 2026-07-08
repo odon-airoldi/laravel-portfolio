@@ -15,7 +15,11 @@
                     </h2>
 
                     <p class="mt-1 text-sm text-gray-600 dark:text-gray-400">
-                        @if (Auth::check()) {{ Auth::user()->name }} @endif
+                        @if (Auth::check())
+                            {{ Auth::user()->name }}<br>
+                            {{ Auth::user()->email }}<br>
+                            {{ Auth::user()->id }}
+                        @endif
                     </p>
                 </div>
             </div>
