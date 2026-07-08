@@ -19,6 +19,7 @@
             </div>
 
             <!-- Settings Dropdown -->
+            @if (Auth::check())
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
@@ -51,6 +52,7 @@
                     </x-slot>
                 </x-dropdown>
             </div>
+            @endif
 
             <!-- Hamburger -->
             <div class="-me-2 flex items-center sm:hidden">
@@ -66,6 +68,7 @@
 
     <!-- Responsive Navigation Menu -->
     <div :class="{'block': open, 'hidden': ! open}" class="hidden sm:hidden">
+        @if (Auth::check())
         <div class="pt-2 pb-3 space-y-1">
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
@@ -96,5 +99,6 @@
                 </form>
             </div>
         </div>
+        @endif
     </div>
 </nav>
