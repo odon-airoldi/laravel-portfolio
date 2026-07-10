@@ -14,7 +14,7 @@
             <label>Description</label>
             <input type="text" id="description" name="description" class="text-gray-800">
             <label>Year</label>
-            <input type="number" id="year" name="year" class="text-gray-800">
+            <input type="number" id="year" name="year" min="2000" max="2030" class="text-gray-800">
             <button type="submit">Aggiungi progetto</button>
         </form>
 
