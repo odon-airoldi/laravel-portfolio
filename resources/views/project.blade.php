@@ -7,14 +7,24 @@
         <p>{{ $project->year }}</p>
         <br>
         <a href="{{ route('projects.edit', $project)}}">Modifica progetto</a><br>
-        <form action="{{ route('projects.destroy', $project)}}" method="POST">
-            @csrf
 
+
+        <div class="delete">Elimina</div>
+        <form class="permanently-delete hidden" action="{{ route('projects.destroy', $project)}}" method="POST">
+            @csrf
             @method('DELETE')
-            <button type="submit">Elimina progetto</button><br>
+            <button type="submit">Vuoi eliminare definitivamente? conferma</button><br>
         </form>
+
         <a href="{{ route('projects.index') }}">Torna ai progetti</a>
 
     </div>
+
+    <script>
+        document.querySelector('.delete').addEventListener('click', () => {
+            document.querySelector('.permanently-delete').classList.remove('hidden')
+            document.querySelector('.delete').classList.add('hidden')
+        })
+    </script>
 
 </x-app-layout>
