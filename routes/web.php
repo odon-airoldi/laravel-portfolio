@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,7 +19,10 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
 
 // Project
 Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
+
+//Type
+Route::resource('type', TypeController::class)->middleware(['auth', 'verified']);
