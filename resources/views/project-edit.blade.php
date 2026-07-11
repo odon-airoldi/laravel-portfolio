@@ -18,6 +18,13 @@
             <label>Year</label>
             <input type="number" id="year" name="year" min="2000" max="2030" class="text-gray-800"
                 value="{{ $project->year }}">
+            <select id="type_id" name="type_id" class="text-gray-800">
+                @foreach ($types as $type)
+                <option value="{{ $type->id }}" {{ $type->id == $project->type_id ? 'selected' : ''}}>
+                    {{ $type->name }}
+                </option>
+                @endforeach
+            </select>
             <button type="submit">Aggiorna progetto</button>
         </form>
 
