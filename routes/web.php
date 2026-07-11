@@ -25,4 +25,4 @@ require __DIR__ . '/auth.php';
 Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
 
 //Type
-Route::resource('type', TypeController::class)->middleware(['auth', 'verified']);
+Route::resource('types', TypeController::class)->middleware(['auth', 'verified']);
