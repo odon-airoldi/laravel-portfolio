@@ -15,6 +15,13 @@
             <input type="text" id="description" name="description" class="text-gray-800">
             <label>Year</label>
             <input type="number" id="year" name="year" min="2000" max="2030" class="text-gray-800">
+            <select id="type_id" name="type_id" class="text-gray-800">
+                @foreach ($types as $type)
+                <option value="{{ $type->id }}">
+                    {{ $type->name }}
+                </option>
+                @endforeach
+            </select>
             <button type="submit">Aggiungi progetto</button>
         </form>
 

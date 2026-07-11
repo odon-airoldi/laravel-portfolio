@@ -23,8 +23,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
+        $types = Type::all();
 
-        return view('project-create');
+        return view('project-create', compact('types'));
     }
 
     /**
@@ -40,6 +41,7 @@ class ProjectController extends Controller
         $newProject->client = $data['client'];
         $newProject->description = $data['description'];
         $newProject->year = $data['year'];
+        $newProject->type_id = $data['type_id'];
         $newProject->save();
 
         return redirect()->route('projects.show', $newProject);
