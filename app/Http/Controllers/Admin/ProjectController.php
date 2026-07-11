@@ -15,7 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view('projects', compact('projects'));
+        return view('project.projects', compact('projects'));
     }
 
     /**
@@ -25,7 +25,7 @@ class ProjectController extends Controller
     {
         $types = Type::all();
 
-        return view('project-create', compact('types'));
+        return view('project.project-create', compact('types'));
     }
 
     /**
@@ -54,7 +54,7 @@ class ProjectController extends Controller
     {
         // @dd($project->type);
 
-        return view('project', compact('project'));
+        return view('project.project', compact('project'));
     }
 
     /**
@@ -64,7 +64,7 @@ class ProjectController extends Controller
     {
         $types = Type::all();
 
-        return view('project-edit', compact('project', 'types'));
+        return view('project.project-edit', compact('project', 'types'));
     }
 
     /**
