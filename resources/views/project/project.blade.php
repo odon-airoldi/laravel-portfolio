@@ -1,11 +1,24 @@
 <x-app-layout>
 
+
     <div class="text-gray-800 dark:text-gray-200">
         <h1>Nome: {{ $project->name }}</h1>
         <p>Cliente: {{ $project->client }}</p>
         <p>Descrizione: {{ $project->description}}</p>
         <p>Anno: {{ $project->year }}</p>
         <p>Tipologia: {{ $project->type->name ?? '' }}</p>
+
+        @if ($project->technologies
+        // ->count() > 0
+        ->isNotEmpty()
+        )
+        <p>Tecnologie:
+            @foreach ( $project->technologies as $technology )
+            {{ $technology->name }}
+            @endforeach
+        </p>
+        @endif
+
         <br>
         <a href="{{ route('projects.edit', $project)}}">Modifica progetto</a><br>
 

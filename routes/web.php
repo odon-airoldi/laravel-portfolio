@@ -22,7 +22,11 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 // Project
-Route::resource('projects', ProjectController::class)->middleware(['auth', 'verified']);
+Route::resource('projects', ProjectController::class)
+    // ->middleware(['auth', 'verified'])
+;
 
 //Type
-Route::resource('types', TypeController::class)->middleware(['auth', 'verified']);
+Route::resource('types', TypeController::class)
+    // ->middleware(['auth', 'verified'])
+;
