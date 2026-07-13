@@ -6,9 +6,10 @@
 
         <form action="{{ route('types.store') }}" method="POST">
             @csrf
-
-            <label>Name</label>
-            <input type="text" id="name" name="name" class="text-gray-800">
+            <div>
+                <label>Name</label>
+                <input type="text" id="name" name="name" class="text-gray-800">
+            </div>
             <label>Description</label>
             <input type="text" id="description" name="description" class="text-gray-800">
             <button type="submit">Aggiungi tipologia</button>
