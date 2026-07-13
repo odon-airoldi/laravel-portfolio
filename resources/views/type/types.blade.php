@@ -1,7 +1,7 @@
 <x-app-layout>
 
     <div class="text-gray-800 dark:text-gray-200">
-        <h1>Tutte le stack</h1>
+        <h1>Tutte le tipologie</h1>
 
         <ul>
             @foreach ( $types as $type )

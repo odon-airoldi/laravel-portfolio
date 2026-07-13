@@ -5,7 +5,7 @@
         <p>Descrizione: {{ $type->description}}</p>
         <br>
 
-        <a href="{{ route('types.edit', $type)}}">Modifica stack</a><br>
+        <a href="{{ route('types.edit', $type)}}">Modifica tipologia</a><br>
 
         <div class="delete">Elimina</div>
         <form class="permanently-delete hidden" action="{{ route('types.destroy', $type)}}" method="POST">
@@ -14,7 +14,7 @@
             <button type="submit">Vuoi eliminare definitivamente? conferma</button><br>
         </form>
 
-        <a href="{{ route('types.index') }}">Torna a tutti gli stack</a>
+        <a href="{{ route('types.index') }}">Torna a tutte le tipologie</a>
 
     </div>
 

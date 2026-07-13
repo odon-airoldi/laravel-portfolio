@@ -2,7 +2,7 @@
 
     <div class="text-gray-800 dark:text-gray-200">
 
-        <h1>Modifica stack</h1>
+        <h1>Modifica tipologia</h1>
 
         <form action="{{ route('types.update', compact('type')) }}" method="POST">
             @csrf
@@ -13,10 +13,10 @@
             <label>Description</label>
             <input type="text" id="description" name="description" class="text-gray-800"
                 value="{{ $type->description }}">
-            <button type="submit">Aggiorna stack</button>
+            <button type="submit">Aggiorna tipologia</button>
         </form>
 
-        <a href="{{ route('types.index') }}">Torna a tutti gli stack</a>
+        <a href="{{ route('types.index') }}">Torna a tutte le tipologie</a>
 
     </div>
 
