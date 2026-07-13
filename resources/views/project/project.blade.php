@@ -5,7 +5,7 @@
         <p>Cliente: {{ $project->client }}</p>
         <p>Descrizione: {{ $project->description}}</p>
         <p>Anno: {{ $project->year }}</p>
-        <p>Stack: {{ $project->type->name }}</p>
+        <p>Stack: {{ $project->type->name ?? '' }}</p>
         <br>
         <a href="{{ route('projects.edit', $project)}}">Modifica progetto</a><br>
 

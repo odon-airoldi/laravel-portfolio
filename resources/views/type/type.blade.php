@@ -6,14 +6,13 @@
         <br>
 
         <a href="{{ route('types.edit', $type)}}">Modifica stack</a><br>
-        {{--
+
         <div class="delete">Elimina</div>
-        <form class="permanently-delete hidden" action="{{ route('projects.destroy', $project)}}" method="POST">
+        <form class="permanently-delete hidden" action="{{ route('types.destroy', $type)}}" method="POST">
             @csrf
             @method('DELETE')
             <button type="submit">Vuoi eliminare definitivamente? conferma</button><br>
         </form>
-        --}}
 
         <a href="{{ route('types.index') }}">Torna a tutti gli stack</a>
 
