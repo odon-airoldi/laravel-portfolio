@@ -45,7 +45,7 @@ class ProjectController extends Controller
         $newProject->type_id = $data['type_id'];
         $newProject->save();
 
-        $newProject->technologies()->attach($data['technologies']);
+        $newProject->technologies()->attach($data['technologies'] ?? []);
 
         return redirect()->route('projects.show', $newProject);
     }
@@ -101,6 +101,7 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        $project->technologies()->detach();
         $project->delete();
 
         return redirect()->route('projects.index');
