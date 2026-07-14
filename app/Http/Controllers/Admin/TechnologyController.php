@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Technology;
 use Illuminate\Http\Request;
 
 class TechnologyController extends Controller
@@ -12,7 +13,8 @@ class TechnologyController extends Controller
      */
     public function index()
     {
-        return 'ciao';
+        $technologies = Technology::all();
+        return view('technology.technologies', compact('technologies'));
     }
 
     /**
@@ -34,9 +36,9 @@ class TechnologyController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Technology $technology)
     {
-        //
+        return view('technology.technology', compact('technology'));
     }
 
     /**

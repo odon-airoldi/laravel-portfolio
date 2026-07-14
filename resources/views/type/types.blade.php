@@ -12,7 +12,7 @@
         </ul>
         <br>
         <br>
-        {{-- <a href="{{ route('projects.create') }}">Aggiungi progetto</a> --}}
+        <a href="{{ route('types.create') }}">Aggiungi tipologia</a>
 
     </div>
 
