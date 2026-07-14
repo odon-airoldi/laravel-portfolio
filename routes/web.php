@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TechnologyController;
 use App\Http\Controllers\Admin\TypeController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,12 +22,17 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__ . '/auth.php';
 
-// Project
+// Projects
 Route::resource('projects', ProjectController::class)
     // ->middleware(['auth', 'verified'])
 ;
 
-//Type
+//Types
 Route::resource('types', TypeController::class)
+    // ->middleware(['auth', 'verified'])
+;
+
+//Technologies
+Route::resource('technologies', TechnologyController::class)
     // ->middleware(['auth', 'verified'])
 ;
