@@ -35,8 +35,6 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-
-
         $data = $request->all();
 
         $newProject = new Project();
@@ -48,7 +46,6 @@ class ProjectController extends Controller
         $newProject->save();
 
         $newProject->technologies()->attach($data['technologies']);
-
 
         return redirect()->route('projects.show', $newProject);
     }
@@ -69,8 +66,9 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
+        $technologies = Technology::all();
 
-        return view('project.project-edit', compact('project', 'types'));
+        return view('project.project-edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -86,6 +84,14 @@ class ProjectController extends Controller
         $project->year = $data['year'];
         $project->type_id = $data['type_id'];
         $project->save();
+
+        // if ($request->has('technologies')) {
+        //     $project->technologies()->sync($data['technologies']);
+        // } else {
+        //     $project->technologies()->detach();
+        // }
+        // soluzione più semplice senza detach
+        $project->technologies()->sync($data['technologies'] ?? []);
 
         return redirect()->route('projects.show', $project);
     }
