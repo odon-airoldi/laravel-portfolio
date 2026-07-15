@@ -28,12 +28,18 @@ class ProjectController extends Controller
         //
     }
 
+
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+        $project->load('type', 'technologies');
+
+        return response()->json([
+            'success' => true,
+            'results' => $project
+        ]);
     }
 
     /**
