@@ -89,6 +89,17 @@ class ProjectController extends Controller
         $project->description = $data['description'];
         $project->year = $data['year'];
         $project->type_id = $data['type_id'];
+
+        if ($request->hasFile('image')) {
+
+            if ($project->image) {
+                Storage::delete($project->image);
+            }
+
+            $path = Storage::putFile('projects', $data['image']);
+            $project->image = $path;
+        }
+
         $project->save();
 
         // if ($request->has('technologies')) {

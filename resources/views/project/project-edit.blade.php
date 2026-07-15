@@ -4,7 +4,7 @@
 
         <h1>Modifica progetto</h1>
 
-        <form action="{{ route('projects.update', compact('project')) }}" method="POST">
+        <form action="{{ route('projects.update', compact('project')) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @method("PUT")
@@ -47,6 +47,11 @@
                     </div>
                     @endforeach
                 </div>
+            </div>
+            <div class="mb-4">
+                <label>Immagine</label>
+                <input type="file" id="image" name="image" />
+                <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->name }}" style="width:160px;" />
             </div>
             <div>
                 <button type="submit">Aggiorna progetto</button>
