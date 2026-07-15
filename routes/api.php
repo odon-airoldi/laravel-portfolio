@@ -9,4 +9,6 @@ use Illuminate\Support\Facades\Route;
 // })->middleware('auth:sanctum');
 
 
-Route::apiResource('projects', ProjectController::class);
+Route::apiResource('projects', ProjectController::class)
+    // 
+    ->names('api.projects');

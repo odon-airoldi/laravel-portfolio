@@ -4,7 +4,7 @@
 
         <h1>Crea progetto</h1>
 
-        <form action="{{ route('projects.store') }}" method="POST">
+        <form action="{{ route('projects.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="mb-4">
                 <label>Name</label>
@@ -41,6 +41,10 @@
                     </div>
                     @endforeach
                 </div>
+            </div>
+            <div class="mb-4">
+                <label>Immagine</label>
+                <input type="file" id="image" name="image" />
             </div>
             <div class="mb-4">
                 <button type="submit">Aggiungi progetto</button>
