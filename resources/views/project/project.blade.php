@@ -19,6 +19,10 @@
         </p>
         @endif
 
+        @if ( $project->image )
+        <img src="{{ asset('storage/' . $project->image) }}" alt="{{ $project->name }}" />
+        @endif
+
         <br>
         <a href="{{ route('projects.edit', $project)}}">Modifica progetto</a><br>
 
